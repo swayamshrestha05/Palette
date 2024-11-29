@@ -1,0 +1,23 @@
+.artwork-grid {
+    margin: 16px;
+}
+  
+.artwork-card {
+    display: flex;
+    /* flex-direction: column; */
+    /* height: 100%; */
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+  
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+  
