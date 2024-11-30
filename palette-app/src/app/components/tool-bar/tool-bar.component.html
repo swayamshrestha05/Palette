@@ -4,10 +4,17 @@
     </span>
     <span class="spacer"></span>
     <nav>
-      <a routerLink="/about">About</a>
-      <a routerLink="">Artworks</a>
-      <a routerLink="/artists">Artists</a>
-      <a routerLink="/contact">Contact</a>
+      <button><a routerLink="/about">About</a></button>
+      <div class="dropdown">
+        <button><a routerLink="">Artworks</a></button>
+        <div class="dropdown-menu">
+          <a href="">Paintings</a>
+          <a href="">Drawings</a>
+          <a href="">Photography</a>
+        </div>
+      </div>
+      <button><a routerLink="/artists">Artists</a></button>
+      <button><a routerLink="/contact">Contact</a></button>
     </nav>
   </mat-toolbar>
   
