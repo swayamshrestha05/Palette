@@ -1,8 +1,7 @@
-<router-outlet></router-outlet>
 <p>artwork-card works!</p>
 
-<mat-grid-tile>
-    @for (artwork of paletteService.artworks$ | async; track $index){
+<!-- <mat-grid-tile>
+    @for (artwork of paletteService.artworks$; track $index){
     <mat-card class="artwork-card">
     <img mat-card-image [src]="artwork.image" alt="Artwork image">
     <mat-card-content>
@@ -12,6 +11,6 @@
     </mat-card-content>
     </mat-card>
 }
-</mat-grid-tile>
+</mat-grid-tile> -->
 
 <p>end here</p>
