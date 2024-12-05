@@ -1,16 +1,21 @@
-<p>artwork-card works!</p>
+<div class="all-cards">
+    @for (artwork of paletteService.artworks$ | async; track $index){
+        <mat-card appearance="outlined" >
+            <a routerLink="/art/{{artwork.id}}">
+            <img src="{{artwork.image}}" alt="">
+            <!-- <mat-card-header>
+                <mat-card-title class="art-title">
+                    <h3>{{ artwork.title }}</h3>
+                </mat-card-title>
+                <mat-card-subtitle class="art-subtitle">
+                    <p>{{ artwork.artist }}</p>
+                    <p>{{ artwork.price }}</p>
+                </mat-card-subtitle>               
+            </mat-card-header> -->
+            </a>
+        </mat-card>  
+    }
+</div>
 
-<!-- <mat-grid-tile>
-    @for (artwork of paletteService.artworks$; track $index){
-    <mat-card class="artwork-card">
-    <img mat-card-image [src]="artwork.image" alt="Artwork image">
-    <mat-card-content>
-        <h3>{{ artwork.title }}</h3>
-        <p>{{ artwork.artist }}, {{ artwork.year }}</p>
-        <p>{{ artwork.price }}</p>
-    </mat-card-content>
-    </mat-card>
-}
-</mat-grid-tile> -->
 
-<p>end here</p>
+

@@ -18,10 +18,5 @@ import { AsyncPipe } from '@angular/common';
 
 export class AppComponent {
   title = 'palette-app';
-  
-  paletteService: PaletteServiceService = inject(PaletteServiceService);
-  // artworks$: Observable<Artwork[]> = this.paletteService.getArtwork();
-
-
 }
 

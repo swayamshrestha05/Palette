@@ -1,0 +1,55 @@
+/* .all-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    gap: 20px;
+}
+
+mat-card{
+    display: flex;
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 15px;
+    border: none;
+    justify-content: center;
+}
+
+.img{
+    margin: auto;
+} */
+
+.all-cards {
+    column-count: 3; /* Adjust the number of columns as needed */
+    column-gap: 20px; /* Space between the columns */
+    width: fit-content;
+}
+
+mat-card {
+    display: inline-block; /* Ensures cards fit properly into the columns */
+    margin-bottom: 20px; /* Space between rows */
+    width: 100%; /* Full width of the column */
+    background-color: white;
+    border-radius: 15px;
+    border: none;
+}
+
+mat-card img {
+    width: 100%; /* Ensures the image fills the card width */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Avoids inline spacing issues */
+}
+
+@media (max-width: 900px) {
+    .all-cards {
+        column-count: 2; /* Fewer columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .all-cards {
+        column-count: 1; /* Single column on small screens */
+    }
+}
+
+
