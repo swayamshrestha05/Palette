@@ -1,1 +1,15 @@
 <app-tool-bar></app-tool-bar>
+
+@let artworkDetail = currArtwork$();
+    @if (artworkDetail){
+        <div class="art">
+            <div class="art-img">
+                <img src="{{artworkDetail.image}}" alt="">
+            </div>
+            <div class="art-desc">
+                <h3>{{artworkDetail.title}}</h3>
+                <p>{{ artworkDetail.artist }}</p>
+                <p>{{ artworkDetail.price }}</p>
+            </div>
+        </div>
+    }

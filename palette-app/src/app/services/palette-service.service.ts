@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { collectionData, Firestore, Timestamp, collection, query } from '@angular/fire/firestore';
+import { collectionData, Firestore, Timestamp, collection, query, getDoc, doc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -22,10 +22,27 @@ export class PaletteServiceService {
     const q2 = query(artworkCollection);
     this.artworks$ =  collectionData(q2, { idField: 'id' }) as Observable<Artwork[]>;
   }
+
+  getArtwork(id: string): Observable<Artwork | null>{
+    console.log(id);
+    const docRef = doc(this.firestore, 'artworkCollection', id);
+    return new Observable<Artwork | null>((observer) => {
+        getDoc(docRef).then(docSnap => {
+          if (docSnap.exists()) {
+            console.log('Document data:', docSnap.data());
+          } else {
+            console.log('No such document!');
+          }
+        }).catch(error => {
+          console.error('Error getting document:', error);
+        });
+      });
+    }
   }
+  
 
 export interface Artwork{
-  id: number;
+  id: string;
   image: string;
   title: string;
   year: Timestamp;

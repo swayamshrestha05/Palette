@@ -1,0 +1,25 @@
+.art {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  
+  .art-img {
+    flex: 1;
+    min-width: 600px; 
+    max-width: 1000px;
+  }
+  
+  .art-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+  }
+  
+  .art-desc {
+    flex: 1; 
+    max-width: 50%;
+    box-sizing: border-box; 
+  }
+  
+  
