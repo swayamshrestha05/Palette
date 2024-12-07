@@ -59,7 +59,7 @@ export interface Artist{
   class: string;
   major: string;
   interests: string;
-  contactDetails: string;
+  email: string;
 }
 
 

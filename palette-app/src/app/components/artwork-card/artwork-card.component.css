@@ -25,6 +25,11 @@ mat-card{
     width: fit-content;
 }
 
+mat-card:hover{
+    translate: 0 -5px;
+    transition: 0.3s;
+  }
+
 mat-card {
     display: inline-block; /* Ensures cards fit properly into the columns */
     margin-bottom: 20px; /* Space between rows */
@@ -32,6 +37,7 @@ mat-card {
     background-color: white;
     border-radius: 15px;
     border: none;
+    transition: 0.3s;
 }
 
 mat-card img {

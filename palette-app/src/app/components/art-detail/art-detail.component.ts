@@ -23,4 +23,4 @@ export class ArtDetailComponent {
     return this.artworks().find((artwork) => artwork.id === this.id);
    })
 
-  }
+}
