@@ -54,7 +54,8 @@ export interface Artwork{
 }
 
 export interface Artist{
-  id: number;
+  picture?: string;
+  id: string;
   name: string;
   class: string;
   major: string;

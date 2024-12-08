@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { PaletteServiceService, Artwork } from '../../services/palette-service.service';
 import { collectionData } from '@angular/fire/firestore';
 import { Router, RouterLink } from '@angular/router';
-
 import { MatCardModule } from '@angular/material/card';
 
 @Component({

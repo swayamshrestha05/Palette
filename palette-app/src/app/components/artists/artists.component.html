@@ -1,2 +1,34 @@
 <app-tool-bar></app-tool-bar>
 
+<div class="all-artists">
+    @for (artist of paletteService.artists$ | async; track $index){
+       <mat-card class="artist-card">
+        <a routerLink="/artist/{{artist.id}}">
+            <mat-card-header>
+                <mat-card-title>
+                    <img class="artist-img" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQP5QQKcY4t1-_XAOvt_5Ii9LGJqTDX0B7u5sOZJFeU8QCGJ2jReifGEDftXkScCw-lMm8nmFUYF2QXwMR2KrzTsw" alt="">
+                    <h3 class="artist-name">{{artist.name}}</h3>
+                    <p class="artist-class">{{artist.class}}</p>
+                </mat-card-title>
+            </mat-card-header>
+        </a>
+       </mat-card>
+    }
+</div>
+
+
+
+<!--<mat-card appearance="outlined" >
+    <a routerLink="/art/{{artwork.id}}">
+    <img src="{{artwork.image}}" alt="">
+     <mat-card-header>
+        <mat-card-title class="art-title">
+            <h3>{{ artwork.title }}</h3>
+        </mat-card-title>
+        <mat-card-subtitle class="art-subtitle">
+            <p>{{ artwork.artist }}</p>
+            <p>{{ artwork.price }}</p>
+        </mat-card-subtitle>               
+    </mat-card-header> 
+    </a>
+</mat-card> -->

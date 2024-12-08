@@ -1,19 +1,23 @@
 .toolbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    color: black;
-    /* padding: 0 100px 0 50px; */
+    align-items: flex-start;
     font-size: 20px;
     margin-bottom: 5%;
     background-color: white;
+    height: 500px;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), 
+                url(https://listingsproject-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fc3tjs6qh1ryg%2F2am1LopOVw1pBB22bZv8yG%2Fca28a36ea9da4f9e3db392d806b81afb%2FStudioview_ugoretz.jpeg?max-w=1280&fit=min&auto=compress,format&s=d4f39ea4af96cb6a39a5f2e7a4ed6f23);
+    background-size: cover;
+    background-repeat: none;
+    background-position: fixed;
   }
   
   .title a {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 40px;
     text-decoration: none;
-    color: black;
+    color: white;
   }
   
   .spacer {
@@ -26,9 +30,10 @@
   }
   
   nav a {
-    color: black;
+    color: white;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 23px;
   }
   
   nav a:hover {
@@ -70,6 +75,10 @@
   
   .dropdown:hover .dropdown-menu {
     display: block;
+  }
+
+  .title, nav{
+    padding-top: 18px;
   }
   
   
