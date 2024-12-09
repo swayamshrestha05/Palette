@@ -1,23 +1,19 @@
-.artwork-grid {
-    margin: 16px;
-}
-  
-.artwork-card {
+.home-img-banner{
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+                                url(https://listingsproject-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fc3tjs6qh1ryg%2F2am1LopOVw1pBB22bZv8yG%2Fca28a36ea9da4f9e3db392d806b81afb%2FStudioview_ugoretz.jpeg?max-w=1280&fit=min&auto=compress,format&s=d4f39ea4af96cb6a39a5f2e7a4ed6f23);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 5rem;
     display: flex;
-    /* flex-direction: column; */
-    /* height: 100%; */
+    justify-content: center;
+    align-items: center;
 }
 
-mat-card-content {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 8px;
+.home-img-banner > .page-title{
+    color: white;
+    position: absolute;
+    font-size: 50px;
+    font-family: "Playfair Display", serif;
 }
-  
-img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-  

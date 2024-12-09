@@ -20,8 +20,8 @@ mat-card{
 } */
 
 .all-cards {
-    column-count: 3; /* Adjust the number of columns as needed */
-    column-gap: 20px; /* Space between the columns */
+    column-count: 3; 
+    column-gap: 20px; 
     width: fit-content;
 }
 
@@ -31,9 +31,9 @@ mat-card:hover{
   }
 
 mat-card {
-    display: inline-block; /* Ensures cards fit properly into the columns */
-    margin-bottom: 20px; /* Space between rows */
-    width: 100%; /* Full width of the column */
+    display: inline-block; 
+    margin-bottom: 20px; 
+    width: 100%; 
     background-color: white;
     border-radius: 15px;
     border: none;
@@ -41,14 +41,14 @@ mat-card {
 }
 
 mat-card img {
-    width: 100%; /* Ensures the image fills the card width */
-    height: auto; /* Maintains aspect ratio */
-    display: block; /* Avoids inline spacing issues */
+    width: 100%; 
+    height: auto; 
+    display: block; 
 }
 
 @media (max-width: 900px) {
     .all-cards {
-        column-count: 2; /* Fewer columns on smaller screens */
+        column-count: 2;
     }
 }
 

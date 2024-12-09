@@ -17,7 +17,7 @@ export class PaletteServiceService {
 
     const artistCollection = collection(this.firestore,'artists');
     const q1 = query(artistCollection);
-    this.artists$ = collectionData<Artist[]>(q1);
+    this.artists$ = collectionData(q1, { idField: 'id' }) as Observable<Artist[]>;
     const artworkCollection = collection(this.firestore, 'artworks');
     const q2 = query(artworkCollection);
     this.artworks$ =  collectionData(q2, { idField: 'id' }) as Observable<Artwork[]>;

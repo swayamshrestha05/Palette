@@ -1,16 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject, Signal } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterLink } from '@angular/router';
-import { MatCardModule } from '@angular/material/card';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tool-bar',
-  imports: [MatToolbarModule, RouterLink],
+  imports: [MatToolbarModule, RouterLink, CommonModule],
   templateUrl: './tool-bar.component.html',
   styleUrl: './tool-bar.component.css'
 })
 
 export class ToolBarComponent {
+  isHome: boolean = false;
+  router: Router = inject(Router);
+
+  constructor(){
+    this.router.events.subscribe(()=>{
+      this.isHome = this.router.url ==='/';
+    })
+  }
 
 }

@@ -3,21 +3,22 @@
     justify-content: space-between;
     align-items: flex-start;
     font-size: 20px;
-    margin-bottom: 5%;
     background-color: white;
-    height: 500px;
-    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), 
-                url(https://listingsproject-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fc3tjs6qh1ryg%2F2am1LopOVw1pBB22bZv8yG%2Fca28a36ea9da4f9e3db392d806b81afb%2FStudioview_ugoretz.jpeg?max-w=1280&fit=min&auto=compress,format&s=d4f39ea4af96cb6a39a5f2e7a4ed6f23);
-    background-size: cover;
-    background-repeat: none;
-    background-position: fixed;
+    border-bottom: 1px solid black;
+    margin-bottom: 4rem;
+  }
+
+  .home-toolbar{
+    margin-bottom: 0;
+    border: none;
   }
   
   .title a {
     font-weight: bold;
     font-size: 40px;
     text-decoration: none;
-    color: white;
+    color: black;
+    font-family: "Lato", serif;
   }
   
   .spacer {
@@ -30,10 +31,11 @@
   }
   
   nav a {
-    color: white;
+    color:black;
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 23px;
+    font-family: "Lato", serif;
   }
   
   nav a:hover {

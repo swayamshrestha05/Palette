@@ -1,19 +1,22 @@
 <div class="all-cards">
+    @let artistDetail = currArtist$();
     @for (artwork of paletteService.artworks$ | async; track $index){
-        <mat-card appearance="outlined" >
-            <a routerLink="/art/{{artwork.id}}">
-            <img src="{{artwork.image}}" alt="">
-            <!-- <mat-card-header>
-                <mat-card-title class="art-title">
-                    <h3>{{ artwork.title }}</h3>
-                </mat-card-title>
-                <mat-card-subtitle class="art-subtitle">
-                    <p>{{ artwork.artist }}</p>
-                    <p>{{ artwork.price }}</p>
-                </mat-card-subtitle>               
-            </mat-card-header> -->
-            </a>
-        </mat-card>  
+        @if (isHome){
+
+            <mat-card appearance="outlined" >
+                <a routerLink="/art/{{artwork.id}}">
+                <img src="{{artwork.image}}" alt="">
+                </a>
+            </mat-card>  
+        } @else {
+            @if (artistDetail!.name === artwork.artist) {
+                <mat-card appearance="outlined">
+                    <a routerLink="/art/{{artwork.id}}">
+                    <img src="{{artwork.image}}" alt="">
+                    </a>
+                </mat-card>
+            }
+        }
     }
 </div>
 

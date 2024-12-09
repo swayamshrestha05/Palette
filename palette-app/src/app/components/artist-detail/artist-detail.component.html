@@ -1,1 +1,14 @@
-<p>artist-detail works!</p>
+<app-tool-bar></app-tool-bar>
+
+@let artistDetail = currArtist$();
+@if (artistDetail){
+    <div class="artist">
+        <div class="art-desc">
+            <h3>{{artistDetail.name}}</h3>
+            <p>{{ artistDetail.class }}</p>
+            <p>{{ artistDetail.email }}</p>
+        </div>
+    </div>
+}
+
+<app-artwork-card></app-artwork-card>

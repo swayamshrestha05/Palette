@@ -4,24 +4,34 @@
 }
 
 .all-artists{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-    gap: 15px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,400px));
+    grid-gap: 30px;
+    justify-content: center;
 }
 
 .artist-card{
     border-radius: 0;
     background-color: white;
-    width: 350px;
-    height: 400px;
     display: flex;
     flex-direction: column;
+    transition: 0.3s;
     text-align: center;
 }
+
+.artist-card:hover{
+    translate: 0 -5px;
+    transition: 0.3s;
+  }
 
 
 .artist-img{
     width: 100%;
 }
+
+mat-card-header{
+    padding: 10px;
+}
+
 
