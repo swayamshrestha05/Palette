@@ -8,14 +8,56 @@
                 <img src="{{artwork.image}}" alt="">
                 </a>
             </mat-card>  
-        } @else {
-            @if (artistDetail!.name === artwork.artist) {
+        }
+
+        @if (isPaintings){
+            @if (artwork.category === paintings) {
+                <mat-card appearance="outlined" >
+                    <a routerLink="/art/{{artwork.id}}">
+                    <img src="{{artwork.image}}" alt="">
+                    </a>
+                </mat-card> 
+            } 
+        }
+
+        @if (isDrawings){
+            @if (artwork.category === drawings) {
+                <mat-card appearance="outlined" >
+                    <a routerLink="/art/{{artwork.id}}">
+                    <img src="{{artwork.image}}" alt="">
+                    </a>
+                </mat-card> 
+            } 
+        }
+
+        @if (isCeramics){
+            @if (artwork.category === ceramics) {
+                <mat-card appearance="outlined" >
+                    <a routerLink="/art/{{artwork.id}}">
+                    <img src="{{artwork.image}}" alt="">
+                    </a>
+                </mat-card> 
+            } 
+        }
+
+        @if (isPhotography){
+            @if (artwork.category === photography) {
+                <mat-card appearance="outlined" >
+                    <a routerLink="/art/{{artwork.id}}">
+                    <img src="{{artwork.image}}" alt="">
+                    </a>
+                </mat-card> 
+            } 
+        }
+
+        @else{
+            <!-- @if (artistDetail!.name === artwork.artist) {
                 <mat-card appearance="outlined">
                     <a routerLink="/art/{{artwork.id}}">
                     <img src="{{artwork.image}}" alt="">
                     </a>
                 </mat-card>
-            }
+            } -->
         }
     }
 </div>

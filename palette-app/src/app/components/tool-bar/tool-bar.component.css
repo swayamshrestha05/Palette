@@ -18,7 +18,7 @@
     font-size: 40px;
     text-decoration: none;
     color: black;
-    font-family: "Lato", serif;
+    font-family: "Playfair Display", serif;
   }
   
   .spacer {
@@ -34,8 +34,9 @@
     color:black;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-size: 23px;
-    font-family: "Lato", serif;
+    font-size: 22px;
+    font-family: "Poppins", serif;
+    font-weight: 300;
   }
   
   nav a:hover {

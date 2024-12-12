@@ -45,12 +45,13 @@ export interface Artwork{
   id: string;
   image: string;
   title: string;
-  year: Timestamp;
+  year: string;
   artist: string;
-  medium: string;
-  dimensions: string;
+  medium?: string;
+  dimensions?: string;
   price?: number;
   description?: string;
+  category: string;
 }
 
 export interface Artist{

@@ -17,11 +17,23 @@ export class ArtworkCardComponent {
   paletteService: PaletteServiceService = inject(PaletteServiceService);
 
   isHome: boolean = false;
+  isPaintings: boolean = false;
+  isDrawings: boolean = false;
+  isCeramics: boolean = false;
+  isPhotography: boolean = false;
   router: Router = inject(Router);
+  paintings: string = "paintings";
+  drawings: string = "drawings";
+  ceramics: string = "ceramics";
+  photography: string = "photography";
 
   constructor(){
     this.router.events.subscribe(()=>{
       this.isHome = this.router.url ==='/';
+      this.isPaintings = this.router.url === '/paintings';
+      this.isDrawings = this.router.url === '/drawings';
+      this.isPhotography = this.router.url === '/photography';
+      this.isCeramics = this.router.url === '/ceramics';
     })
   }
 

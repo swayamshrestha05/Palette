@@ -1,0 +1,44 @@
+<app-tool-bar></app-tool-bar>
+<div class="form-container">
+
+    <form #f="ngForm" [formGroup] = "contactForm" (ngSubmit) = "onSubmit()">
+      <h1>{{title}}</h1>
+    
+      <p>
+        <label>First Name:</label>
+        <input type="text" formControlName="fname" placeholder="Enter first name">
+      </p>
+    
+      <p>
+        <label>Last Name:</label>
+        <input type="text" formControlName="lname" placeholder="Enter last name">
+      </p>
+    
+      <fieldset>
+        <legend>Choose how you want to be contacted:</legend>
+        <p>
+          <input id="text" type="checkbox" formControlName="textBox" (change)="checkBoxChange('textBox')">
+          <label for="text">Text (SMS)</label>
+          @if (contactForm.get('textBox')!.value){
+            <input type="text" formControlName="phoneNumber" placeholder="Enter number">
+          }
+        </p> 
+    
+        <p>
+          <input id="email" type="checkbox" formControlName="emailBox" (change)="checkBoxChange('emailBox')">
+          <label for="email">Email</label>
+          @if (contactForm.get('emailBox')!.value){
+            <input type="text" formControlName="email" placeholder="Enter email">
+          }
+        </p>
+      </fieldset>
+    
+      <button type="submit" [disabled] = "areFieldsInvalid() || !f.valid">Submit</button>
+    
+      @if(formData){
+        <h2>Submitted Data:</h2>
+        <p>{{ formData | json }}</p>
+      }
+      
+    </form>
+  </div>
