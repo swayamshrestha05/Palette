@@ -30,7 +30,7 @@
     gap: 100px;
   }
   
-  nav a {
+.other_pages {
     color:black;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -39,7 +39,7 @@
     font-weight: 300;
   }
   
-  nav a:hover {
+.other_pages:hover {
     color: rgb(145, 41, 41); /* Accent color for hover effect */
   }
 
@@ -60,9 +60,9 @@
     background-color: #fff;
     min-width: 150px;
     z-index: 2;
-    border: 1px solid black;
-    padding-top: 20%;
-    border: none;
+    border: 1px solid rgb(227, 227, 227);
+    padding-top: 5px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
   }
   
   .dropdown-menu a {
@@ -70,6 +70,9 @@
     padding: 8px 16px;
     text-decoration: none;
     color: #000;
+    font-size: 17px;
+    font-family: "Poppins", serif;
+    font-weight: 300;
   }
   
   .dropdown-menu a:hover {
