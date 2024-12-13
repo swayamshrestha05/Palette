@@ -1,19 +1,36 @@
-.home-img-banner{
+.home-img-banner {
     width: 100%;
     height: 500px;
     background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
-                                url(https://listingsproject-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fc3tjs6qh1ryg%2F2am1LopOVw1pBB22bZv8yG%2Fca28a36ea9da4f9e3db392d806b81afb%2FStudioview_ugoretz.jpeg?max-w=1280&fit=min&auto=compress,format&s=d4f39ea4af96cb6a39a5f2e7a4ed6f23);
+                url(https://listingsproject-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fc3tjs6qh1ryg%2F2am1LopOVw1pBB22bZv8yG%2Fca28a36ea9da4f9e3db392d806b81afb%2FStudioview_ugoretz.jpeg?max-w=1280&fit=min&auto=compress,format&s=d4f39ea4af96cb6a39a5f2e7a4ed6f23);
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden; 
 }
 
-.home-img-banner > .page-title{
+.home-img-banner > .page-title {
     color: white;
     position: absolute;
-    font-size: 50px;
+    font-size: 3.5rem;
     font-family: "Playfair Display", serif;
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: fadeInMoveUp 2s ease-in-out forwards; /* Animation */
+}
+
+
+@keyframes fadeInMoveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

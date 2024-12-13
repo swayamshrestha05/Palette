@@ -50,14 +50,14 @@
             } 
         }
 
-        @else{
-            <!-- @if (artistDetail!.name === artwork.artist) {
+        @if(isArtist){
+            @if (artistDetail!.name === artwork.artist) {
                 <mat-card appearance="outlined">
                     <a routerLink="/art/{{artwork.id}}">
                     <img src="{{artwork.image}}" alt="">
                     </a>
                 </mat-card>
-            } -->
+            }
         }
     }
 </div>

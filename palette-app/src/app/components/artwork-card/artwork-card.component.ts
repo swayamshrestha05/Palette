@@ -21,6 +21,7 @@ export class ArtworkCardComponent {
   isDrawings: boolean = false;
   isCeramics: boolean = false;
   isPhotography: boolean = false;
+  isArtist: boolean = false;
   router: Router = inject(Router);
   paintings: string = "paintings";
   drawings: string = "drawings";
@@ -34,6 +35,7 @@ export class ArtworkCardComponent {
       this.isDrawings = this.router.url === '/drawings';
       this.isPhotography = this.router.url === '/photography';
       this.isCeramics = this.router.url === '/ceramics';
+      this.isArtist = this.router.url.includes('artist/')
     })
   }
 
