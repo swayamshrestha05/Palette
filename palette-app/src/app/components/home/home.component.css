@@ -20,7 +20,7 @@
     font-family: "Playfair Display", serif;
     opacity: 0; 
     transform: translateY(20px); 
-    animation: fadeInMoveUp 2s ease-in-out forwards; /* Animation */
+    animation: fadeInMoveUp 1.5s ease-in-out forwards; /* Animation */
 }
 
 

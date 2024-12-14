@@ -1,21 +1,22 @@
 import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { FormsModule, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToolBarComponent } from '../tool-bar/tool-bar.component';
-import {Angular}
+import { AngularFireModule} from '@angular/fire/compat';
+import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 @Component({
   selector: 'app-art-submission',
-  imports: [RouterOutlet, FormsModule, ReactiveFormsModule, CommonModule, ToolBarComponent],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, ToolBarComponent, AngularFireModule, AngularFireStorageModule],
   templateUrl: './art-submission.component.html',
   styleUrls: ['./art-submission.component.css']
 })
 
 export class ArtSubmissionComponent {
   fb = inject(FormBuilder);
+  fireStorage: AngularFireStorage = inject(AngularFireStorage);
   
   contactForm = this.fb.group({
     id: ['', Validators.required],
@@ -55,11 +56,15 @@ export class ArtSubmissionComponent {
     this.contactForm.reset();
   }
 
-  onFileSelected(event: Event): void {
+  onFileSelected(event: Event) {
     const fileInput = event.target as HTMLInputElement;
     if (fileInput && fileInput.files && fileInput.files.length > 0) {
       const file = fileInput.files[0];
       console.log(file);
+      // const path = file.name;
+      // const uploadTask = await this.fireStorage.upload(path,file);
+      // const url = await uploadTask.ref.getDownloadURL();
+      // console.log(path);
     }
   }
   
