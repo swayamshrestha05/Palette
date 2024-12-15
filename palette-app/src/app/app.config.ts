@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideAnimationsAsync()
@@ -16,6 +17,8 @@ export const appConfig: ApplicationConfig = {
         messagingSenderId: "550839041311",
         appId: "1:550839041311:web:317d2f7de8a4fc32ea842a",
         measurementId: "G-P6TCNQK1FN" })), 
-        provideFirestore(() => getFirestore())
+        provideFirestore(() => getFirestore()),
+        provideStorage(() => getStorage())
   ]
 };
+

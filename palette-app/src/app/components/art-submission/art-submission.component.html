@@ -1,46 +1,48 @@
 <app-tool-bar></app-tool-bar>
-<p>
-  <label>Title:</label>
-  <input type="text" formControlName="title" placeholder="Enter artwork title">
-</p>
-<p>
-  <label>Image Upload:</label>
-  <input type="file" formControlName="image" (change)="onFileSelected($event)">
-</p>
-<p>
-  <label>Year:</label>
-  <input type="text" formControlName="year" placeholder="Enter year">
-</p>
-<p>
-  <label>Artist:</label>
-  <input type="text" formControlName="artist" placeholder="Enter artist name">
-</p>
-<p>
-  <label>Medium:</label>
-  <input type="text" formControlName="medium" placeholder="Enter medium">
-</p>
-<p>
-  <label>Dimensions:</label>
-  <input type="text" formControlName="dimensions" placeholder="Enter dimensions">
-</p>
-<p>
-  <label>Price:</label>
-  <input type="text" formControlName="price" placeholder="Enter price">
-</p>
-<p>
-  <label>Description:</label>
-  <textarea formControlName="description" placeholder="Enter description"></textarea>
-</p>
-<p>
-  <label>Category:</label>
-  <input type="text" formControlName="category" placeholder="Enter category">
-</p>
+<div [formGroup]="submitArtForm" class="form-container">
+  <p class="form-group">
+    <label>Title:</label>
+    <input type="text" formControlName="title" placeholder="Enter artwork title">
+  </p>
+  <p class="form-group">
+    <label>Image Upload:</label>
+    <input type="file" formControlName="image" (change)="uploadImage($event)">
+  </p>
+  <p class="form-group">
+    <label>Year:</label>
+    <input type="text" formControlName="year" placeholder="Enter year">
+  </p>
+  <p class="form-group">
+    <label>Artist:</label>
+    <input type="text" formControlName="artist" placeholder="Enter artist name">
+  </p>
+  <p class="form-group">
+    <label>Medium:</label>
+    <input type="text" formControlName="medium" placeholder="Enter medium">
+  </p>
+  <p class="form-group">
+    <label>Dimensions:</label>
+    <input type="text" formControlName="dimensions" placeholder="Enter dimensions">
+  </p>
+  <p class="form-group">
+    <label>Price:</label>
+    <input type="text" formControlName="price" placeholder="Enter price">
+  </p>
+  <p class="form-group">
+    <label>Description:</label>
+    <textarea formControlName="description" placeholder="Enter description"></textarea>
+  </p>
+  <p class="form-group">
+    <label>Category:</label>
+    <input type="text" formControlName="category" placeholder="Enter category">
+  </p>
 
-<p>
-  <button type="submit" [disabled]="!contactForm.valid"> Submit </button>
+  <p class="submit-button">
+    <button type="submit" (click)="onSubmit()"> Submit </button>
 
-  @if (formData){
-    <h2>Submitted Data:</h2>
-    <p>{{formData | json}}</p>
-  }
-</p>
+    @if (formData){
+      <h2>Submitted Data:</h2>
+      <p>{{formData | json}}</p>
+    }
+  </p>
+</div>

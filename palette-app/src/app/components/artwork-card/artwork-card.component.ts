@@ -40,7 +40,6 @@ export class ArtworkCardComponent {
   }
 
   route: ActivatedRoute = inject(ActivatedRoute);
-  // artwork = signal<Artwork | null>(null);
   id = this.route.snapshot.paramMap.get('id');
   artists: Signal<Artist[]> = toSignal(this.paletteService.artists$, { initialValue: [] });
 

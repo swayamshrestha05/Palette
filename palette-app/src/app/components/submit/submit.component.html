@@ -1,0 +1,35 @@
+<app-tool-bar></app-tool-bar>
+
+
+<div #f="ngForm" [formGroup]="authForm" class="form-container">
+    <p class="form-group">
+        <label>Admin Username:</label>
+        <input type="text" formControlName="username" placeholder="Enter admin username">      
+    </p>
+
+    <p class="form-group">
+        <label>Admin Password:</label>
+        <input type="password" formControlName="password" placeholder="Enter admin password">      
+    </p>
+
+<div class="buttons">
+    <a routerLink="/submit-artwork">
+        <button class="submit-button" type="submit" (click)="onArtworkSubmit()" [disabled] = "!authForm.valid || !isAuthorized()"> Submit Artwork </button>
+    </a>
+
+    @if (authFormData){
+      <h2>Submitted Data:</h2>
+      <p>{{authFormData | json}}</p>
+    }
+
+    <a routerLink="/submit-artist">
+        <button class="submit-button" type="submit" (click)="onArtistSubmit()" [disabled] = "!authForm.valid || !isAuthorized()" > Submit Artist </button>
+    </a>
+    
+    @if (authFormData){
+        <h2>Submitted Data:</h2>
+        <p>{{authFormData | json}}</p>
+    }
+</div>
+
+</div>

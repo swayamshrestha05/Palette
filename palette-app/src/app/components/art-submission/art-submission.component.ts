@@ -4,22 +4,22 @@ import { FormBuilder } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToolBarComponent } from '../tool-bar/tool-bar.component';
-import { AngularFireModule} from '@angular/fire/compat';
-import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { getDownloadURL, getStorage, ref, Storage, uploadBytes } from '@angular/fire/storage';
+import { PaletteServiceService } from '../../services/palette-service.service';
 
 @Component({
   selector: 'app-art-submission',
-  imports: [FormsModule, ReactiveFormsModule, CommonModule, ToolBarComponent, AngularFireModule, AngularFireStorageModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, ToolBarComponent],
   templateUrl: './art-submission.component.html',
   styleUrls: ['./art-submission.component.css']
 })
 
 export class ArtSubmissionComponent {
   fb = inject(FormBuilder);
-  fireStorage: AngularFireStorage = inject(AngularFireStorage);
-  
-  contactForm = this.fb.group({
-    id: ['', Validators.required],
+  fireStorage: Storage = inject(Storage);
+  paletteService: PaletteServiceService = inject(PaletteServiceService);
+
+  submitArtForm = this.fb.group({
     image: [null, Validators.required],
     title: ['', Validators.required],
     year: ['', [Validators.required, Validators.pattern("^(19|20)\\d{2}$")]], // Matches years like 1900-2099
@@ -29,49 +29,49 @@ export class ArtSubmissionComponent {
     price: ['', Validators.pattern("^\\d+(\\.\\d{1,2})?$")], // Optional, but if provided, must be a valid decimal number
     description: [''],
     category: ['', Validators.required],
-    fname: ['', Validators.required],
-    lname: ['', Validators.required],
-    textBox: [false],
-    emailBox: [false],
-    phoneNumber: ['', Validators.pattern("[0-9]{10}")],
-    email: ['', Validators.email],
   });
 
   title: string = 'Enter your artwork information, please';
-  formData: Form | null = null;
-
+  formData: ArtForm | null = null;
+  imageURL: string = '';
 
   onSubmit(): void {
     this.formData = {
-      image: this.contactForm.get('image')!.value,
-      title: this.contactForm.get('title')!.value,
-      year: this.contactForm.get('year')!.value,
-      artist: this.contactForm.get('artist')!.value,
-      medium: this.contactForm.get('medium')!.value,
-      dimensions: this.contactForm.get('dimensions')!.value,
-      price: Number(this.contactForm.get('price')!.value),
-      description: this.contactForm.get('description')!.value,
-      category: this.contactForm.get('category')!.value,
+      image: this.imageURL,
+      title: this.submitArtForm.get('title')!.value,
+      year: this.submitArtForm.get('year')!.value,
+      artist: this.submitArtForm.get('artist')!.value,
+      medium: this.submitArtForm.get('medium')!.value,
+      dimensions: this.submitArtForm.get('dimensions')!.value,
+      price: Number(this.submitArtForm.get('price')!.value),
+      description: this.submitArtForm.get('description')!.value,
+      category: this.submitArtForm.get('category')!.value,
     };
-    this.contactForm.reset();
+    this.submitArtForm.reset();
+    this.paletteService.submitArt(this.formData);
   }
 
-  onFileSelected(event: Event) {
+  uploadImage = (event: Event) => {
+    const storage = getStorage()
     const fileInput = event.target as HTMLInputElement;
     if (fileInput && fileInput.files && fileInput.files.length > 0) {
-      const file = fileInput.files[0];
-      console.log(file);
-      // const path = file.name;
-      // const uploadTask = await this.fireStorage.upload(path,file);
-      // const url = await uploadTask.ref.getDownloadURL();
-      // console.log(path);
+      const file = fileInput.files[0]
+      const reference = ref(storage, file.name)
+
+      uploadBytes(reference, file)
+        .then(snapshot => {
+          return getDownloadURL(snapshot.ref)
+        })
+        .then(downloadURL =>
+          {(this.imageURL = downloadURL)
+        })
     }
   }
   
 }
 
-export interface Form {
-  image: File | null;
+export interface ArtForm {
+  image: string | null;
   title: string | null;
   year: string | null;
   artist: string | null;
