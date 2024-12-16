@@ -3,9 +3,13 @@
         <a routerLink="">Palette</a>
     </span>
     <span class="spacer"></span>
+
+
     <button class="hamburger" (click)="toggleSideMenu()">
       &#9776; <!-- Hamburger Icon -->
     </button>
+
+    <!-- top nav bar when the screen is large enough -->
     <nav class = "hide-on-small">
       <button><a routerLink="/about" class="other_pages">About</a></button>
       <div class="dropdown">
@@ -22,6 +26,7 @@
     </nav>
   </mat-toolbar>
   
+  <!-- side nav bar opened using the hamburger button -->
   <div class="side-menu" [ngClass]="{'open': isSideMenuOpen}">
     <button class="close-btn" (click)="toggleSideMenu()">✖</button>
     <a routerLink="/about">About</a>

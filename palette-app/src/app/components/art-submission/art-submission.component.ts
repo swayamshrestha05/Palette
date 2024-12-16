@@ -19,8 +19,12 @@ export class ArtSubmissionComponent {
   fireStorage: Storage = inject(Storage);
   paletteService: PaletteServiceService = inject(PaletteServiceService);
 
+  title: string = 'Enter your artwork information, please';
+  formData: ArtForm | null = null;
+  imageURL: string = '';
+
   submitArtForm = this.fb.group({
-    image: [null, Validators.required],
+    image: [null, Validators.required], // an image file
     title: ['', Validators.required],
     year: ['', [Validators.required, Validators.pattern("^(19|20)\\d{2}$")]], // Matches years like 1900-2099
     artist: ['', Validators.required],
@@ -31,10 +35,8 @@ export class ArtSubmissionComponent {
     category: ['', Validators.required],
   });
 
-  title: string = 'Enter your artwork information, please';
-  formData: ArtForm | null = null;
-  imageURL: string = '';
-
+  // this function stores the submitted form details to the Firestore Database
+  // and resets the form
   onSubmit(): void {
     this.formData = {
       image: this.imageURL,
@@ -51,9 +53,16 @@ export class ArtSubmissionComponent {
     this.paletteService.submitArt(this.formData);
   }
 
+  // this function stores the image uploaded by the user into Firebase Storage,
+  // gets the downloadURL of the image and returns this URL
+  // Note: Uploading images and retrieving URLs were implemented by referring to these pages:
+  // https://stackoverflow.com/questions/45714007/firebase-get-download-url-after-successful-image-upload-to-firebase-storage
+  // https://firebase.google.com/docs/storage/web/upload-files
+  // https://stackoverflow.com/questions/70051736/firebase-storage-typescript-error-property-on-does-not-exist-on-type-promise
   uploadImage = (event: Event) => {
     const storage = getStorage()
     const fileInput = event.target as HTMLInputElement;
+
     if (fileInput && fileInput.files && fileInput.files.length > 0) {
       const file = fileInput.files[0]
       const reference = ref(storage, file.name)
@@ -70,6 +79,7 @@ export class ArtSubmissionComponent {
   
 }
 
+// an interface to store all the details from the submitArtForm
 export interface ArtForm {
   image: string | null;
   title: string | null;

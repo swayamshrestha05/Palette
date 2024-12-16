@@ -15,7 +15,6 @@ import { toSignal } from '@angular/core/rxjs-interop';
 export class ArtDetailComponent {
   paletteService: PaletteServiceService = inject(PaletteServiceService);
   route: ActivatedRoute = inject(ActivatedRoute);
-  // artwork = signal<Artwork | null>(null);
   id = this.route.snapshot.paramMap.get('id');
   artworks: Signal<Artwork[]> = toSignal(this.paletteService.artworks$, { initialValue: [] });
 

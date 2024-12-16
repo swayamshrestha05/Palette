@@ -32,6 +32,8 @@ export class ArtistSubmissionComponent {
 
   formData: ArtistForm | null = null;
 
+  // this function stores the submitted form details to the Firestore Database
+  // and resets the form
   onSubmit(): void {
     console.log('hello world');
     this.formData = {
@@ -46,6 +48,12 @@ export class ArtistSubmissionComponent {
     this.paletteService.submitArtist(this.formData);
   }
 
+  // this function stores the image uploaded by the user into Firebase Storage,
+  // gets the downloadURL of the image and returns this URL
+    // Note: Uploading images and retrieving URLs were implemented by referring to these pages:
+  // https://stackoverflow.com/questions/45714007/firebase-get-download-url-after-successful-image-upload-to-firebase-storage
+  // https://firebase.google.com/docs/storage/web/upload-files
+  // https://stackoverflow.com/questions/70051736/firebase-storage-typescript-error-property-on-does-not-exist-on-type-promise
   uploadImage = (event: Event) => {
     const storage = getStorage()
     const fileInput = event.target as HTMLInputElement;
@@ -64,6 +72,7 @@ export class ArtistSubmissionComponent {
   }
 }
 
+// an interface to store all the details from the submitArtistForm
 export interface ArtistForm{
   name: string | null;
   class: string | null;

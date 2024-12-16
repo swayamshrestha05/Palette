@@ -29,43 +29,13 @@ export class PaletteServiceService {
     this.credentials$ =  collectionData(q3, { idField: 'id' }) as Observable<Authorization[]>;
   }
 
-  getArtwork(id: string): Observable<Artwork | null>{
-    const docRef = doc(this.firestore, 'artworkCollection', id);
-    return new Observable<Artwork | null>((observer) => {
-        getDoc(docRef).then(docSnap => {
-          if (docSnap.exists()) {
-            console.log('Document data:', docSnap.data());
-          } else {
-            console.log('No such document!');
-          }
-        }).catch(error => {
-          console.error('Error getting document:', error);
-        });
-      });
-    }
-
-    getAdminAuth(): Observable<Authorization | null>{
-      const docRef = doc(this.firestore, 'authCollection', 'CCOj6t9wl9qmh0K0kAQM');
-      return new Observable<Authorization | null>((observer) => {
-          getDoc(docRef).then(docSnap => {
-            if (docSnap.exists()) {
-            console.log('Document data:', docSnap.data());
-
-              return (docSnap.data() as Authorization);
-            } else {
-              return ({ id: '', username: '', password: '' });
-            }
-          }).catch(error => {
-            console.error('Error getting document:', error);
-          });
-        });
-      }
-
+    // add a new document to Firebase in the 'artworks' collection
     submitArt(formData: any){
       const artworkCollection = collection(this.firestore, 'artworks');
       addDoc(artworkCollection, formData); 
     }
 
+    // add a new document to Firebase in the 'artists' collection
     submitArtist(formData: any){
       const artistCollection = collection(this.firestore, 'artists');
       addDoc(artistCollection, formData); 

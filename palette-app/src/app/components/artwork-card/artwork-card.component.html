@@ -1,8 +1,10 @@
 <div class="all-cards">
     @let artistDetail = currArtist$();
+    <!-- loop through all the artworks -->
     @for (artwork of paletteService.artworks$ | async; track $index){
-        @if (isHome){
 
+        <!-- if it is the home page, display all the artworks -->
+        @if (isHome){
             <mat-card appearance="outlined" >
                 <a routerLink="/art/{{artwork.id}}">
                 <img src="{{artwork.image}}" alt="">
@@ -10,6 +12,10 @@
             </mat-card>  
         }
 
+        
+        <!-- filter by categories -->
+
+        <!-- if the current page is paintings, check if the category is "paintings" -->
         @if (isPaintings){
             @if (artwork.category === paintings) {
                 <mat-card appearance="outlined" >
@@ -20,6 +26,7 @@
             } 
         }
 
+        <!-- if the current page is drawings, check if the category is "drawings" -->
         @if (isDrawings){
             @if (artwork.category === drawings) {
                 <mat-card appearance="outlined" >
@@ -30,6 +37,7 @@
             } 
         }
 
+        <!-- if the current page is ceramics, check if the category is "ceramics" -->
         @if (isCeramics){
             @if (artwork.category === ceramics) {
                 <mat-card appearance="outlined" >
@@ -40,6 +48,7 @@
             } 
         }
 
+        <!-- if the current page is photography, check if the category is "photography" -->
         @if (isPhotography){
             @if (artwork.category === photography) {
                 <mat-card appearance="outlined" >
@@ -50,6 +59,7 @@
             } 
         }
 
+        <!-- if the current page is an artist detail page, check if the artwork is by that particular artist -->
         @if(isArtist){
             @if (artistDetail!.name === artwork.artist) {
                 <mat-card appearance="outlined">

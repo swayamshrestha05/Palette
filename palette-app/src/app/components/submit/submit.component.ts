@@ -21,7 +21,7 @@ export class SubmitComponent {
   adminAuth: Authorization | null = null;
   
   route: ActivatedRoute = inject(ActivatedRoute);
-  id = 'CCOj6t9wl9qmh0K0kAQM';
+  id = 'CCOj6t9wl9qmh0K0kAQM'; // document id from Firestore Database for authentication
   credentials: Signal<Authorization[]> = toSignal(this.paletteService.credentials$, { initialValue: [] });
 
   currCredential$: Signal<Authorization | undefined> = computed(()=>{
@@ -48,6 +48,7 @@ export class SubmitComponent {
     }
   }
 
+  // check if the username and password match with the credentials stored in the database
   isAuthorized():boolean{
     if (this.authForm.get('username')!.value === this.currCredential$()!.username &&
     this.authForm.get('password')!.value === this.currCredential$()!.password){

@@ -37,12 +37,8 @@
     <input type="text" formControlName="category" placeholder="Enter category">
   </p>
 
+  <!-- the submit button is disabled until all the required fields are filled in with valid inputs -->
   <p class="submit-button">
     <button type="submit" (click)="onSubmit()" [disabled]="!submitArtForm.valid"> Submit </button>
-
-    @if (formData){
-      <h2>Submitted Data:</h2>
-      <p>{{formData | json}}</p>
-    }
   </p>
 </div>

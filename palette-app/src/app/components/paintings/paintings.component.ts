@@ -15,7 +15,6 @@ import { ArtworkCardComponent } from '../artwork-card/artwork-card.component';
 export class PaintingsComponent {
   paletteService: PaletteServiceService = inject(PaletteServiceService);
   route: ActivatedRoute = inject(ActivatedRoute);
-  // artwork = signal<Artwork | null>(null);
   category = "paintings";
   artworks: Signal<Artwork[]> = toSignal(this.paletteService.artworks$, { initialValue: [] });
 

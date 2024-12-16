@@ -15,14 +15,16 @@ import { toSignal } from '@angular/core/rxjs-interop';
 })
 export class ArtworkCardComponent {
   paletteService: PaletteServiceService = inject(PaletteServiceService);
+  router: Router = inject(Router);
 
+  // variables to check what page the user is on to filter the artwork cards respectively
   isHome: boolean = false;
   isPaintings: boolean = false;
   isDrawings: boolean = false;
   isCeramics: boolean = false;
   isPhotography: boolean = false;
   isArtist: boolean = false;
-  router: Router = inject(Router);
+  
   paintings: string = "paintings";
   drawings: string = "drawings";
   ceramics: string = "ceramics";
