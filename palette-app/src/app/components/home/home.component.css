@@ -1,7 +1,7 @@
 .home-img-banner {
     width: 100%;
     height: 500px;
-    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)),
                 url(https://firebasestorage.googleapis.com/v0/b/palette-e3d2a.firebasestorage.app/o/design_hub.jpeg?alt=media&token=ac08738f-f008-4935-bac8-e5048912498d);
     background-repeat: no-repeat;
     background-size: cover;
