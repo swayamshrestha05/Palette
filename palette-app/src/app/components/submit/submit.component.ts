@@ -46,7 +46,6 @@ export class SubmitComponent {
       username: this.authForm.get('username')!.value,
       password: this.authForm.get('password')!.value,
     }
-
   }
 
   isAuthorized():boolean{

@@ -13,7 +13,7 @@
     </p>
 
 <div class="buttons">
-    <a routerLink="/submit-artwork">
+    <a routerLink="/submit-artwork" [attr.tabindex]="(!authForm.valid || !isAuthorized())? -1: 0">
         <button class="submit-button" type="submit" (click)="onArtworkSubmit()" [disabled] = "!authForm.valid || !isAuthorized()"> Submit Artwork </button>
     </a>
 
@@ -22,8 +22,8 @@
       <p>{{authFormData | json}}</p>
     }
 
-    <a routerLink="/submit-artist">
-        <button class="submit-button" type="submit" (click)="onArtistSubmit()" [disabled] = "!authForm.valid || !isAuthorized()" > Submit Artist </button>
+    <a routerLink="/submit-artist" [attr.tabindex]="(!authForm.valid || !isAuthorized())? -1: 0">
+        <button class="submit-button" type="submit" (click)="onArtistSubmit()" [disabled] = "!authForm.valid || !isAuthorized()"> Submit Artist </button>
     </a>
     
     @if (authFormData){
