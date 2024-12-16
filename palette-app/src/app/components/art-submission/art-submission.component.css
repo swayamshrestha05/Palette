@@ -64,3 +64,16 @@
     color: #333;
   }
   
+  .required{
+    color: red;
+  }
+
+  .required-text{
+    color: red;
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+
+ ::placeholder{
+    color: #b8b8b8;
+  }

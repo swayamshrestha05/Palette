@@ -60,5 +60,8 @@
     background-color: #8d8d8d;
   }
   
+  ::placeholder{
+    color: #b8b8b8;
+  }
 
   
