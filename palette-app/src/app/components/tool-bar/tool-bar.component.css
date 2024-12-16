@@ -21,13 +21,10 @@
   font-family: "Playfair Display", serif;
 }
 
-.spacer {
-  flex: 1;
-}
-
 nav {
   display: flex;
-  gap: 100px;
+  justify-content: space-between;
+  width: 45%;
 }
 
 .other_pages {
@@ -144,7 +141,7 @@ button{
 }
   
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .hide-on-small {
     display: none;
   }
