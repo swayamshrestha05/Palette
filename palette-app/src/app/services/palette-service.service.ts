@@ -93,7 +93,7 @@ export interface Artwork{
 }
 
 export interface Artist{
-  picture?: string;
+  image: string;
   id: string;
   name: string;
   class: string;

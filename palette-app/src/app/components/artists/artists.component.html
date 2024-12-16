@@ -6,9 +6,13 @@
             <a routerLink="/artist/{{artist.id}}">
                 <mat-card-header>
                     <mat-card-title>
-                        <img class="artist-img" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQP5QQKcY4t1-_XAOvt_5Ii9LGJqTDX0B7u5sOZJFeU8QCGJ2jReifGEDftXkScCw-lMm8nmFUYF2QXwMR2KrzTsw" alt="">
-                        <h3 class="artist-name">{{artist.name}}</h3>
-                        <p class="artist-class">{{artist.class}}</p>
+                        <div class="image-container">
+                            <img class="artist-img" src="{{artist.image}}" alt="">
+                        </div>
+                        <div class="artist-details">
+                            <h3 class="artist-name">{{artist.name}}</h3>
+                            <p class="artist-class">{{artist.class}}</p>
+                        </div>
                     </mat-card-title>
                 </mat-card-header>
             </a>

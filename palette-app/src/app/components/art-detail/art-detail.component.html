@@ -7,9 +7,19 @@
                 <img src="{{artworkDetail.image}}" alt="">
             </div>
             <div class="art-desc">
-                <h3>{{artworkDetail.title}}</h3>
-                <p>{{ artworkDetail.artist }}</p>
-                <p>${{ artworkDetail.price }}</p>
+                <p class="artist-name">{{ artworkDetail.artist }}</p>
+                <hr>
+                <h3 class="art-title">{{artworkDetail.title}}</h3>
+                <div class="details">
+                    <p>{{ artworkDetail.description }}</p>
+                    <p>{{ artworkDetail.medium }}</p>
+                    <p>{{artworkDetail.dimensions}}</p>
+    
+                    @if (artworkDetail.price){
+                        <p>${{ artworkDetail.price }}</p>
+                    }
+                </div>
+                
             </div>
         </div>
     }

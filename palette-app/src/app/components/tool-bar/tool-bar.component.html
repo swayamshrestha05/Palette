@@ -3,7 +3,10 @@
         <a routerLink="">Palette</a>
     </span>
     <span class="spacer"></span>
-    <nav>
+    <button class="hamburger" (click)="toggleSideMenu()">
+      &#9776; <!-- Hamburger Icon -->
+    </button>
+    <nav class = "hide-on-small">
       <button><a routerLink="/about" class="other_pages">About</a></button>
       <div class="dropdown">
         <button class="other_pages">Artworks</button>
@@ -19,3 +22,13 @@
     </nav>
   </mat-toolbar>
   
+  <div class="side-menu" [ngClass]="{'open': isSideMenuOpen}">
+    <button class="close-btn" (click)="toggleSideMenu()">✖</button>
+    <a routerLink="/about">About</a>
+    <a routerLink="/paintings">Paintings</a>
+    <a routerLink="/drawings">Drawings</a>
+    <a routerLink="/photography">Photography</a>
+    <a routerLink="/ceramics">Ceramics</a>
+    <a routerLink="/artists">Artists</a>
+    <a routerLink="/submit">Submit</a>
+  </div>

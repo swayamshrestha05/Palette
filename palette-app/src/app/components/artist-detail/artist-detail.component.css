@@ -1,0 +1,34 @@
+.artist {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    margin-bottom: 30px;
+}
+
+.art-desc h3 {
+    font-size: 2.5rem;      /* Larger font size for the artist's name */
+    font-weight: bold;      /* Make the name bold */
+    color: #333;            /* Darker color for emphasis */
+    margin-bottom: 15px;    /* Add spacing below the name */
+}
+
+.art-desc p {
+    font-size: 1.2rem;      /* Adjust font size for readability */
+    color: #555;            /* Softer color for the text */
+    margin: 10px 0;         /* Add spacing between paragraphs */
+}
+
+.art-desc p:first-of-type {
+    font-weight: bold;      /* Highlight the artist's class */
+}
+
+.art-desc p span {
+    font-style: italic;     /* Italicize any additional information */
+}
+
+.artist img {
+    max-width: 150px;       /* Adjust the size for the artist's picture */
+    height: auto;
+    border-radius: 50%;     /* Circular appearance for the image */
+    margin-bottom: 20px;    /* Add spacing below the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+}

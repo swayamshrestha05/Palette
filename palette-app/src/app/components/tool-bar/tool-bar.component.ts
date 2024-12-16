@@ -20,4 +20,10 @@ export class ToolBarComponent {
     })
   }
 
+  isSideMenuOpen = false;
+
+  toggleSideMenu() {
+    this.isSideMenuOpen = !this.isSideMenuOpen;
+  }
+
 }

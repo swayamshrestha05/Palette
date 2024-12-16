@@ -18,6 +18,7 @@
     flex-direction: column;
     transition: 0.3s;
     text-align: center;
+    justify-content: center;
 }
 
 .artist-card:hover{
@@ -27,11 +28,22 @@
 
 
 .artist-img{
-    width: 100%;
+    width: 380px;
+    max-height: 380px;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
 }
 
 mat-card-header{
     padding: 10px;
 }
 
+.artist-details {
+    margin: 16px;
+}
 
+.image-container{
+    display: flex;
+    height: 380px;
+}
