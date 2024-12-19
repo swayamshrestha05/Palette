@@ -33,10 +33,21 @@
     <label>Description:</label>
     <textarea formControlName="description" placeholder="Enter description"></textarea>
   </p>
-  <p class="form-group">
+  <!-- <p class="form-group">
     <label>Category: <span class="required">*</span></label>
     <input type="text" formControlName="category" placeholder="example: paintings, photography, ...">
-  </p>
+  </p> -->
+
+   <p class="form-group">
+    <label>Category: <span class="required">*</span></label>
+    <select formControlName="category">
+      <option value="" disabled selected>Select a category for your artwork</option>
+      <option value="ceramics">Ceramics</option>
+      <option value="drawings">Drawings</option>
+      <option value="paintings">Paintings</option>
+      <option value="photography">Photography</option>
+    </select>
+  </p>  
 
   <!-- the submit button is disabled until all the required fields are filled in with valid inputs -->
   <p class="submit-button">
